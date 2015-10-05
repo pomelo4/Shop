@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".activity.A1_SpecialActivity" />
         <activity android:name=".B1_GoodsListActivity" />
+        <activity android:name=".activity.E1_SettingActivity" />
     </application>
 
 </manifest>
