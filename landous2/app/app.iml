@@ -95,5 +95,6 @@
     <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="universal-image-loader-1.8.6-with-sources" level="project" />
+    <orderEntry type="module" module-name="SMSSDK" exported="" />
   </component>
 </module>

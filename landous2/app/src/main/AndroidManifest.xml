@@ -2,8 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zykj.landous2" >
 
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信-->
-
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:name=".LandousApplication"
         android:allowBackup="true"
@@ -19,9 +26,69 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 商品列表 -->
+        <activity
+            android:name="com.zykj.landous2.activity.B1_GoodsListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden|stateVisible|adjustPan" >
+        </activity>
+
+        <activity
+            android:name="com.zykj.landous2.activity.B2_ProductdetailsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E13_User_policy_Activity"
+            android:label="@string/title_activity_e13__user_policy_" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E2_AddressManageActivity"
+            android:label="@string/title_activity_address_manage" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E3_AddAddressActivity"
+            android:label="@string/title_activity_e3__add_address" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E6_SigninActivity"
+            android:label="Sign_in_activity" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E7_SignupActivity"
+            android:label="@string/title_activity_e7__signup" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E8_ResetPwdActivity"
+            android:label="reset_pwd_activity" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E1_SettingActivity"
+            android:label="@string/title_activity_e1__setting" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E10_CompanyInfoActivity"
+            android:label="@string/title_activity_e10__company_info" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E11_AppInfoActivity"
+            android:label="@string/title_activity_e11__app_info" >
+        </activity>
+        <activity
+            android:name="com.zykj.landous2.activity.E12_CompanyMapActivity"
+            android:label="@string/title_activity_e12__company_map" >
+        </activity>
+
+
         <activity android:name=".activity.A1_SpecialActivity" />
-        <activity android:name=".B1_GoodsListActivity" />
-        <activity android:name=".activity.E1_SettingActivity" />
+
+        <activity android:name=".activity.C1_ShopActivity" />
+
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
     </application>
 
 </manifest>

@@ -39,6 +39,7 @@ import com.external.maxwin.view.XListView.IXListViewListener;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.zykj.landous2.R;
 import com.zykj.landous2.Tools.HttpUtils;
+import com.zykj.landous2.activity.B1_GoodsListActivity;
 import com.zykj.landous2.adapter.A0_GoodsAdapter;
 import com.zykj.landous2.adapter.ImgAdapter;
 import com.zykj.landous2.view.MyListView;
@@ -202,8 +203,66 @@ public class A0_HomeFragment extends Fragment implements OnClickListener,
 
 
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
+        switch (v.getId()) {
+//		String goods_id[] = new String[]{"3025","3028","3029","3031","3032","3035","3036","3037"};//通过gc_id来筛选需要显示在
+            case R.id.iv_shengxianyinpin://(休闲食品)   生鲜饮品 1
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3025");
+                startActivity(it);
 
+                break;
+            case R.id.iv_xiuxianlingshi:// (家庭清洁)   休闲零食2
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3032");
+                startActivity(it);
+
+                break;
+            case R.id.iv_yanjiulipin://(个人洗护) 烟酒礼品3
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3035");
+                startActivity(it);
+
+                break;
+            case R.id.iv_liangyoutiaowei://(生活日用)  粮油调味4
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3036");
+                startActivity(it);
+
+                break;
+            case R.id.iv_muyingshenghuo://(酒水饮料) 母婴生活5
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3037");
+                startActivity(it);
+
+                break;
+            case R.id.iv_gehuxihua://(家用电器) 个护洗化6
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3028");
+                startActivity(it);
+                break;
+            case R.id.iv_riyongtuza://(粮油调味) 日用土杂7
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3029");
+                startActivity(it);
+                break;
+            case R.id.iv_jiajuwenti://(办公礼品) 家具文体8
+                it = new Intent(getActivity(), B1_GoodsListActivity.class);
+                it.putExtra("gc_id", "3031");
+                startActivity(it);
+                break;
+            case R.id.ll_share:
+                // Share mShare = new Share(getActivity());
+                // mShare.show("landous.com");
+//                ShareUmengMain mShare = new ShareUmengMain(getActivity());
+//                mShare.setContent("我在懒豆商城看见件商品不错，你也来看看吧");
+//                mShare.show();
+                break;
+            case R.id.search_input:
+//                it = new Intent(getActivity(), A2_SearchActivity.class);
+//                startActivity(it);
+                break;
+        }
     }
 
 

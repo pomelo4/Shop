@@ -47,6 +47,8 @@ import com.zykj.landous2.R;
 import com.zykj.landous2.Tools.HttpUtils;
 import com.zykj.landous2.Tools.Image.CircularImage;
 import com.zykj.landous2.activity.E1_SettingActivity;
+import com.zykj.landous2.activity.E2_AddressManageActivity;
+import com.zykj.landous2.activity.E6_SigninActivity;
 import com.zykj.landous2.view.BadgeView;
 
 /**
@@ -342,6 +344,91 @@ public class E0_ProfileFragment extends Fragment implements OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.profile_address_page:
+                intent = new Intent(getActivity(), E2_AddressManageActivity.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.push_right_in,
+                        R.anim.push_right_out);
+
+                break;
+            case R.id.profile_star_thing:
+//                intent = new Intent(getActivity(), CollectActivity.class);
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.push_right_in,
+//                        R.anim.push_right_out);
+                break;
+            case R.id.profile_coin_store:
+//                intent = new Intent(getActivity(), E5_CoinStoreActivity.class);
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.push_right_in,
+//                        R.anim.push_right_out);
+                break;
+            case R.id.profile_avatar_login_area:
+                if (!isLogin()) {
+                    intent = new Intent(getActivity(), E6_SigninActivity.class);
+                    startActivityForResult(intent, REQUEST_SIGN_IN);
+                    getActivity().overridePendingTransition(R.anim.push_right_in,
+                            R.anim.push_right_out);
+                }
+                break;
+            case R.id.profile_head_nopayment:
+//                intent = new Intent(getActivity(), E1_NO_PaymentAvtivity.class);
+//                intent.putExtra("order_state", "10");
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.push_right_in,
+//                        R.anim.push_right_out);
+                break;
+            case R.id.profile_head_payment:
+//                intent = new Intent(getActivity(), E1_PaymentAvtivity.class);
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.push_right_in,
+//                        R.anim.push_right_out);
+                break;
+            case R.id.profile_head_ship:
+//                intent = new Intent(getActivity(), E1_ShipActivity.class);
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.push_right_in,
+//                        R.anim.push_right_out);
+                break;
+            case R.id.profile_head_receipt:
+//                intent = new Intent(getActivity(), E1_EceiptActivity.class);
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.push_right_in,
+//                        R.anim.push_right_out);
+                break;
+            case R.id.profile_head_address_manage:
+//                intent = new Intent(getActivity(), E1_Activity_getPointsLog.class);
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.push_right_in,
+//                        R.anim.push_right_out);
+                break;
+            case R.id.profile_check:
+                if (isLogin()) {
+                    HttpUtils.addCheckPoints(res);
+                    loadingPDialog.show();
+                } else {
+                    intent = new Intent(getActivity(), E6_SigninActivity.class);
+                    startActivityForResult(intent, REQUEST_SIGN_IN);
+                    getActivity().overridePendingTransition(R.anim.push_right_in,
+                            R.anim.push_right_out);
+                }
+                break;
+            case R.id.avatar_head_image:
+                if (isLogin()) {
+                    if (android.os.Environment.getExternalStorageState().equals(
+                            android.os.Environment.MEDIA_MOUNTED)) {
+                        ShowPickDialog();
+                    }
+
+                } else {
+
+                }
+                break;
+            default:
+                break;
+        }
 
     }
 
